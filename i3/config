@@ -88,26 +88,26 @@ bindsym $mod+Shift+p exec /home/hannes/.config/i3/lock.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym i resize grow height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym i resize grow height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -117,9 +117,14 @@ bindsym $mod+r mode "resize"
 #bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pulseaudio-control --volume-max 130 up #increase sound volume
-bindsym XF86AudioLowerVolume exec pulseaudio-control --volume-max 130 down #decrease sound volume
-bindsym XF86AudioMute exec pulseaudio-control togmute # mute sound
+#bindsym XF86AudioRaiseVolume exec pulseaudio-control --volume-max 130 up #increase sound volume
+#bindsym XF86AudioLowerVolume exec pulseaudio-control --volume-max 130 down #decrease sound volume
+#bindsym XF86AudioMute exec pulseaudio-control togmute # mute sound
+
+bindsym XF86AudioRaiseVolume exec /home/hannes/.config/i3/volumeControl.sh up
+bindsym XF86AudioLowerVolume exec /home/hannes/.config/i3/volumeControl.sh down
+bindsym XF86AudioMute exec /home/hannes/.config/i3/volumeControl.sh mute
+
 
 # bluetooth
 bindsym $mod+Shift+b exec blueman-manager
@@ -140,19 +145,6 @@ gaps inner 8
 gaps outer 8
 gaps top 40
 
-
-# kde
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-for_window [class="plasmashell"] floating enable;
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [title="win7"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
 
 # floating windows
 for_window [class="mpv"] floating enable;
@@ -188,3 +180,4 @@ exec --no-startup-id xmodmap /home/hannes/.Xmodmap
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id pactl load-module module-switch-on-connect
+exec --no-startup-id easyeffects --gapplication-service
