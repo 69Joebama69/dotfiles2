@@ -184,7 +184,7 @@ exec --no-startup-id feh --bg-scale /usr/share/backgrounds/the-great-wave2.jpg
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id polybar main_bar --config=$HOME/.config/polybar/config.ini
 exec --no-startup-id dunst
-exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id xmodmap /home/hannes/.Xmodmap
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id pactl load-module module-switch-on-connect
