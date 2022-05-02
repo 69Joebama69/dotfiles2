@@ -180,7 +180,7 @@ for_window [class="thunar"] floating enable
 
 # startup programs
 exec_always --no-startup-id picom --experimental-backends -cb --config ~/.config/picom/picom.conf
-exec --no-startup-id feh --bg-scale /usr/share/backgrounds/the-great-wave2.jpg
+exec --no-startup-id feh --bg-scale /usr/share/backgrounds/the-great-wave2-nord.png
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id polybar main_bar --config=$HOME/.config/polybar/config.ini
 exec --no-startup-id dunst
