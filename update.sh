@@ -1,4 +1,6 @@
 path="/home/$USER/.config"
+
+cp /home/$USER/.Xmodmap  /home/$USER/.xinitrc  /home/$USER/.bashrc  /home/$USER/.Xresources .
 cp -r $path/dunst/ $path/fish/ $path/i3/ $path/kitty/ $path/mpv/ $path/nvim/ $path/picom/ $path/polybar/ $path/ranger/ $path/rofi/ $path/wallpapers/ .
 
 msg="$1"
