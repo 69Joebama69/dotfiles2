@@ -1,12 +1,13 @@
-path="/home/$USER/.config"
+home="/home/$USER/.config"
+config=$home/.config
 
-cp /home/$USER/.Xmodmap  /home/$USER/.xinitrc  /home/$USER/.bashrc  /home/$USER/.Xresources .
-cp -r $path/dunst/ $path/fish/ $path/i3/ $path/kitty/ $path/mpv/ $path/nvim/ $path/picom/ $path/polybar/ $path/ranger/ $path/rofi/ $path/wallpapers/ /home/$USER/projects/dotfiles2/
+cp $home/.Xmodmap  $home/.xinitrc  $home/.bashrc  $home/.Xresources .
+cp -r $config/dunst/ $config/fish/ $config/i3/ $config/kitty/ $config/mpv/ $config/nvim/ $config/picom/ $config/polybar/ $config/ranger/ $config/rofi/ $config/wallpapers/ /home/$USER/projects/dotfiles2/
 
 msg="$1"
 [ -z "$msg" ] && msg="update"
 
-dir=pwd
+dir=$(pwd)
 
 cd /home/$USER/projects/dotfiles2/
 
