@@ -1,5 +1,5 @@
-home="/home/$USER/.config"
-config=$home/.config
+home="/home/$USER"
+config="$home/.config"
 
 cp $home/.Xmodmap  $home/.xinitrc  $home/.bashrc  $home/.Xresources .
 cp -r $config/dunst/ $config/fish/ $config/i3/ $config/kitty/ $config/mpv/ $config/nvim/ $config/picom/ $config/polybar/ $config/ranger/ $config/rofi/ $config/wallpapers/ /home/$USER/projects/dotfiles2/
