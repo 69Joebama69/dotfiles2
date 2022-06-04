@@ -44,7 +44,7 @@ export SSH_AUTH_SOCK
 # see https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
 mkdir -p "$HOME"/.local/share/keyrings
 
-xmodmap /home/hannes/.Xmodmap
+# exec xmodmap /home/hannes/.Xmodmap
 
 #twm &
 #xclock -geometry 50x50-1+1 &

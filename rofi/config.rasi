@@ -4,7 +4,7 @@
 configuration {
 modi: "window,run,ssh,combi,drun";
 combi-modi: "window,drun";
-font: "feather 12";
+font: "FiraCode Nerd Font Mono 11";
 terminal: "kitty";
 
 sorting-method: "fzf";
