@@ -9,16 +9,18 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # rofi
+# bindsym $mod+d exec --no-startup-id /home/hannes/.config/rofi/bin/launcher_colorful
+# bindsym $mod+m exec --no-startup-id /home/hannes/.config/rofi/bin/menu_mpd
+# bindsym $mod+n exec --no-startup-id /home/hannes/.config/rofi/bin/menu_network
+# bindsym $mod+p exec --no-startup-id /home/hannes/.config/rofi/bin/menu_powermenu
 bindsym $mod+d exec --no-startup-id rofi -show combi
-#bindsym $mod+d exec --no-startup-id /home/hannes/.config/rofi/bin/launcher_colorful
-#bindsym $mod+m exec --no-startup-id /home/hannes/.config/rofi/bin/menu_mpd
-#bindsym $mod+n exec --no-startup-id /home/hannes/.config/rofi/bin/menu_network
-#bindsym $mod+p exec --no-startup-id /home/hannes/.config/rofi/bin/menu_powermenu
+bindsym $mod+s exec $HOME/.config/i3/rofi-screenshot.sh
 bindsym $mod+Shift+s exec --no-startup-id rofi-screenshot
 bindsym $mod+Shift+Ctrl+s exec --no-startup-id rofi-screenshot -s
 
 bindsym $mod+b exec firefox 
 bindsym $mod+Shift+v exec code
+bindsym $mod+Shift+a exec $HOME/.config/i3/float.sh &
 
 # change focus
 bindsym $mod+h focus left
@@ -33,7 +35,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym $mod+w split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -146,40 +148,42 @@ gaps inner 8
 gaps outer 8
 gaps top 40
 
-
-# floating windows
-#for_window [class="mpv"] floating enable;
-#for_window [title="OneLoneCoder.com*"] floating enable;
-#for_window [class="feh"] floating enable;
-#for_window [class="test2d"] floating enable;
-#for_window [class="RssReader"] floating enable
-#for_window [class="JPG-Compression"] floating enable
-#for_window [class="Project"] floating enable
-#for_window [class="SandSim"] floating enable
-#for_window [title="Blender Preferences"] floating enable
-#for_window [title="Blender Render"] floating enable
-#for_window [class="atari800"] floating enable
-#for_window [title="Android Emulator*"] floating enable
-#for_window [class="net-tfobz-tunnel-client-ClientForm"] floating enable
-#for_window [class="*qemu*"] floating enable
-#for_window [title="*Paravim"] floating enable
-#for_window [title="Minecraft*"] floating enable
-#for_window [title="Welcome to Xbox"] floating enable
-#for_window [class="thunar"] floating enable
-
 #smart_borders on
 #smart_borders no_gaps
 #border_radius 10
 
 # startup programs
 exec_always --no-startup-id picom --experimental-backends -cb --config ~/.config/picom/picom.conf
-exec --no-startup-id feh --bg-scale /usr/share/backgrounds/the-great-wave2-nord.png
-exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id feh --bg-scale $HOME/.config/wallpapers/the-great-wave2-nord.png
 exec --no-startup-id polybar main_bar --config=$HOME/.config/polybar/config.ini
 exec --no-startup-id dunst
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id nm-applet
-exec --no-startup-id pactl load-module module-switch-on-connect
-exec --no-startup-id easyeffects --gapplication-service
-exec --no-startup-id xinput set-prop 12 327 0
 exec --no-startup-id xmodmap $HOME/.Xmodmap
+exec --no-startup-id nm-applet
+# exec --no-startup-id easyeffects --gapplication-service
+
+# floating windows
+for_window [class="mpv"] floating enable
+for_window [title="OneLoneCoder.com*"] floating enable
+for_window [class="feh"] floating enable;
+for_window [class="test2d"] floating enable;
+for_window [class="RssReader"] floating enable
+for_window [class="JPG-Compression"] floating enable
+for_window [class="Project"] floating enable
+for_window [class="SandSim"] floating enable
+for_window [title="Blender Preferences"] floating enable
+for_window [title="Blender Render"] floating enable
+for_window [class="atari800"] floating enable
+for_window [title="Android Emulator*"] floating enable
+for_window [class="net-tfobz-tunnel-client-ClientForm"] floating enable
+# for_window [class="*qemu*"] floating enable
+# for_window [title="*Paravim"] floating enable
+# for_window [title="Minecraft*"] floating enable
+for_window [title="Welcome to Xbox"] floating enable
+for_window [class="thunar"] floating enable
+for_window [class="easyeffects"] flaoting enable
+for_window [class="qpwgraph"] flaoting enable
+for_window [class="thunar"] flaoting enable
+for_window [class="easyeffects"] flaoting enable
+for_window [title="EasyEffects"] floating enable
+for_window [class="lutris"] floating enable
+for_window [class="epicgameslauncher.exe"] floating enable
